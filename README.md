@@ -1,40 +1,58 @@
 🔍 Problem Statement
 --------------------
 
-The objective is to predict future gold prices based on historical data to aid investors, analysts, and stakeholders in making informed financial decisions. This is especially useful in financial markets where gold prices fluctuate and predicting these movements can have substantial financial impacts.
-
-📁 Dataset
-
-The dataset used is a CSV file containing historical gold price data from 2013 to 2023. The data includes the date and gold price, which is the main variable of interest for this project.
+Forecasting weather conditions accurately is critical for agriculture, aviation, disaster management, and daily life planning. This project aims to develop an RNN-based model to predict the next day's weather type based on historical weather metrics like temperature, wind speed, and precipitation.
 
 🧠 Approach
 -----------
 
-1.  **Data Preprocessing**: Cleaned the data, normalized the gold prices using MinMaxScaler, and split the dataset into training and test sets.
+1.  **Data Cleaning**: Checked for missing and duplicate values — none found.
     
-2.  **LSTM Model**: Built and trained an LSTM model to predict future gold prices based on the historical data.
+2.  **Preprocessing**:
     
-3.  **Model Evaluation**: Used the Mean Absolute Percentage Error (MAPE) metric to evaluate the performance of the LSTM model.
+    *   Normalized continuous features (precipitation, temp\_max, temp\_min, wind).
+        
+    *   Encoded categorical target (weather) using Label Encoding.
+        
+3.  **Model Building**:
     
+    *   Constructed an RNN model using Keras Sequential API.
+        
+    *   Input shape designed for sequential time-series data.
+        
+    *   Output layer uses Softmax for multi-class classification.
+        
+4.  **Model Training**:
+    
+    *   Split data into training and testing sets.
+        
+    *   Trained RNN with appropriate batch size and epochs.
+        
+5.  **Model Evaluation**:
+    
+    *   Measured accuracy on test data.
+        
+    *   Plotted training vs validation loss.
+        
 
 📈 Key Features
 ---------------
 
-*   Time series analysis of gold prices from 2013-2023
+*   Built an RNN model for sequence-based classification.
     
-*   LSTM-based forecasting model
+*   Handled time-series data effectively.
     
-*   Data visualization using Matplotlib and Plotly
+*   Achieved significant accuracy in multi-class weather prediction.
     
-*   Performance evaluation using MAPE
+*   Visualized loss trends to ensure model generalization.
     
 
 ✅ Results
 ---------
 
-*   **Test Accuracy**: 92.99% (using the MAPE metric)
+*   **Test Accuracy**: ~91.23%
     
-*   The LSTM model provides predictions that can help forecast future trends in gold prices, with a high degree of accuracy.
+*   Successfully predicted weather types like drizzle, rain, sunny, etc., based on past climatic features with over 90% test set accuracy.
     
 
 📷 Screenshots
@@ -44,9 +62,12 @@ The dataset used is a CSV file containing historical gold price data from 2013 t
 
 
 📚 Learnings
+------------
 
-*   Gained hands-on experience with LSTM networks for time series forecasting.
+*   Understood time-series preprocessing for RNNs.
     
-*   Learned how to preprocess data for LSTM models, including normalization and splitting datasets.
+*   Gained experience building and tuning RNN models in TensorFlow/Keras.
     
-*   Gained insights into evaluating model performance using MAPE.
+*   Learned how weather prediction involves sequential pattern recognition.
+    
+*   Improved skills in feature scaling, label encoding, and sequence modeling.
